@@ -1,0 +1,9 @@
+<form method="post">
+    {% csrf_token %}
+    {{ form.code.label_tag }} {{ form.code }}
+    <button type="submit">Apply Coupon</button>
+</form>
+
+{% if coupon_code %}
+    <p>Coupon <strong>{{ coupon_code }}</strong> applied! Discount: ₹{{ coupon_discount }}</p>
+{% endif %}

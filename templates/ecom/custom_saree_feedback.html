@@ -1,0 +1,15 @@
+{% extends 'ecom/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Saree Customization Feedback</h2>
+  <form method="POST" novalidate>
+    {% csrf_token %}
+    <div class="form-group">
+      {{ form.as_p }}
+    </div>
+    <button type="submit" class="btn btn-primary">Send Feedback</button>
+  </form>
+</div>
+{% endblock %}

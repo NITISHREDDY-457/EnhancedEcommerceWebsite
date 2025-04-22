@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>About Us - Manchala Silks</title>
+  <style>
+    body {
+      background-color: #f7f7f7;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .about-section {
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h2 {
+      color: #9C27B0;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #555;
+      font-size: 1.2em;
+      line-height: 1.8em;
+    }
+
+    .owner-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .owner-image img {
+      width: 300px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+    }
+
+    .footer {
+      position: relative;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  {% if request.user.is_authenticated %}
+    {% include "ecom/customer_navbar.html" %}
+  {% else %}
+    {% include "ecom/navbar.html" %}
+  {% endif %}
+
+  <div class="about-section">
+    <div class="owner-image">
+      <img src="{% static 'images/client2.png.jpg' %}" alt="Owner of Manchala Silks">
+      <p style="margin-top:10px; font-weight: bold;">Mr. Manchala Ranganayakulu<br><span style="font-weight: normal;">Founder, Palla Silks</span></p>
+    </div>
+    <div class="about-text">
+      <h2>Palla Silks</h2>
+      <p>
+        Rooted in tradition and woven with elegance, our collection brings you the timeless beauty of 
+        <strong>Kanchi sarees</strong>, cherished across <strong>Andhra Pradesh</strong>. Known for their rich silk, intricate 
+        zari work, and majestic designs, Kanchi sarees reflect the cultural heritage and craftsmanship of South India.
+        Each saree is a celebration of artistry — perfect for weddings, festivals, and special occasions.
+      </p>
+    </div>
+    <div class="owner-image">
+      <img src="{% static 'images/client.png' %}" alt="Owner of Manchala Silks">
+      <p style="margin-top:10px; font-weight: bold;">Mr. Manchala Ajay <br><span style="font-weight: normal;">CO-Founder, Palla Silks</span></p>
+    </div>
+  </div>
+
+  <div class="footer">
+    {% include "ecom/footer.html" %}
+  </div>
+</body>
+<!--
+developed By : Nitish
+-->
+</html>
